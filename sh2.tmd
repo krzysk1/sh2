@@ -229,7 +229,7 @@
                 <[tmvector3d][R0][0.140208 -0.740664 -1.844040]>
                 <[tmvector3d][X0][ 1.0 0.0 0.0 ]>
                 <[string8][InputBrake][RightBrakeInput.Output]>
-                <[float64][BrakeStrength][0.6500]>
+                <[float64][BrakeStrength][0.3500]>
             >
             <[wheel][LeftWheelHull][]
                 <[float64][K][107600]>
@@ -242,7 +242,7 @@
                 <[tmvector3d][R0][0.140208 0.740664 -1.844040]>
                 <[tmvector3d][X0][ 1.0 0.0 0.0 ]>
                 <[string8][InputBrake][LeftBrakeInput.Output]>
-                <[float64][BrakeStrength][0.6500]>
+                <[float64][BrakeStrength][0.3500]>
             >
             <[wheelhull][TailSkidHull][]
                 <[float64][K][312000]>
@@ -987,6 +987,9 @@
             >
             <[output][UniversalTime][]
                 <[string8][Input][Clock.OutputUniversalTime]>
+            >
+            <[output][LocalTime][]
+                <[string8][Input][Clock.OutputLocalTime]>
             >			
             <[output][BankAngle][]
                 <[string8][Input][AttitudeIndicator.BankAngle]>
@@ -1048,11 +1051,11 @@
                 <[uint32][InputID][Propeller.RotationAngle]> //sim/flightmodel/engine/POINT_prop_ang_deg[0]
                 <[float64][Scaling][1]>			
             >
-            <[graphics_sec_to_hms][Watch][]
+            <[graphics_sec_to_hms][Watch2][]
                  <[string8][Input][ENGINEInput_1.Output]> 
             >		
             <[graphics_mapping][ENGINEInput_7][]
-          //      <[string8][Input][Watch.Output]> //sim/flightmodel/engine/POINT_prop_ang_deg[0]  //property 'Watch.Seconds' not found
+          //      <[string8][Input][Watch2.Output]> //sim/flightmodel/engine/POINT_prop_ang_deg[0]  //property 'Watch.Seconds' not found
                 <[tmvector2d][Map][(0 0) (60.0 360)]> 
             >		
     			
@@ -1488,13 +1491,19 @@
             >
     			
     	//clock
-    	// --------------------------------		
+    	// --------------------------------	
+            <[graphics_input][LocalTime][]
+                <[uint32][InputID][LocalTime.Output]>
+            >
+            <[graphics_sec_to_hms][Watch][]
+                <[string8][Input][LocalTime.Output]>
+            >		
             <[hingedbodygraphics][SecundeWatch][]
        //         <[string8][GeometryList][ gauges_en_2430_12 ]>
                 <[string8][GeometryList][ gauges_780_10 ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[uint32][AngleID][Clock.Output]>
+                <[string8][InputAngle][Watch.Seconds60]>
                 <[float64][AngleMax][0.104667]>	
                 <[tmvector3d][Axis][-1.0 0.0 0.0]>
                 <[tmvector3d][Pivot][0.213640 0.113034 -1.051883]>
@@ -1504,7 +1513,7 @@
                 <[string8][GeometryList][ gauges_831_10 ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[uint32][AngleID][Clock.Output]>
+                <[string8][InputAngle][LocalTime.Output]>
                 <[float64][AngleMax][0.001744]>
                 <[tmvector3d][Axis][-1.0 0.0 0.0]>
                 <[tmvector3d][Pivot][0.075579 0.113034 -1.051883]>
@@ -1514,7 +1523,7 @@
                 <[string8][GeometryList][ gauges_1890_10 ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[uint32][AngleID][Clock.Output]>
+                <[string8][InputAngle][LocalTime.Output]>
                 <[float64][AngleMax][0.00014537037]>		
                 <[tmvector3d][Axis][-1.0 0.0 0.0]>
                 <[tmvector3d][Pivot][-0.063476 0.113034 -1.051883]>
@@ -1904,8 +1913,8 @@
                 <[string8][GeometryList][ other_8913_18 tires_28 ]>			
                 <[uint32][PositionID][LeftGear.R]>
                 <[uint32][OrientationID][LeftGear.Q]>
-                <[uint32][AngleID][LeftWheelHull.RotationAngle]> //sim/flightmodel/parts/tire_prop_rot[0]
-                <[tmvector3d][Axis][0.0 1.0 0.0]>
+                <[uint32][AngleID][LeftWheelHull.RotationAngle]> 
+                <[tmvector3d][Axis][0.0 -1.0 0.0]>
                 <[tmvector3d][Pivot][0.134033 0.610747 -1.817984]>
             >
     	//	Right Gear
@@ -1933,8 +1942,8 @@
                 <[string8][GeometryList][ other_23334_18 tires_3456_28 ]>			
                 <[uint32][PositionID][RightGear.R]>
                 <[uint32][OrientationID][RightGear.Q]>
-                <[uint32][AngleID][RightWheelHull.RotationAngle]> //sim/flightmodel/parts/tire_prop_rot[1]
-                <[tmvector3d][Axis][0.0 1.0 0.0]>
+                <[uint32][AngleID][RightWheelHull.RotationAngle]> 
+                <[tmvector3d][Axis][0.0 -1.0 0.0]>
                 <[tmvector3d][Pivot][0.134033 -0.644061 -1.817196]>
             >
     		
