@@ -5,7 +5,6 @@
         <[string8][DisplayName][Shavrov Sh-2]>
         <[string8][DescriptionTextEN][Shavrov Sh-2 was a 1930s amphibian design and the first Soviet mass-produced flying boat. The small, wooden aircraft was a further development of the Sh-1, with a more powerful engine and increased size.  
 		For Aerofly FS2 made by Krzysztof Kaniewski. Original 3D Design made by Denis "ddenn" Krupin.]>
-		//General characteristics Length: 8.20 m (26 ft 11 in) Wingspan: 13.0 m upper wing, 5.4 m lower wing (42 ft 8 in / 17 ft 9 in) Wing area: 24.75 m² (266 ft²) Empty weight: 680 kg (1,500 lb) Max. takeoff weight: 937 kg (2,065 lb) Powerplant: 1 × Shvetsov M-11A 5-cylinder air-cooled radial engine with a 2-bladed propeller, 75 kW (100 hp) Performance Maximum speed: 140 km/h (76 knots, 87 mph) Range: 400 km (215 nm, 250 mi) Service ceiling: 3500 m (11,480 ft).
 		<[float64][WingSpan][11.2]>
 		<[float64][Mass][885]>
 		<[float64][MaximumSpeed][55.0]>
