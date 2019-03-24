@@ -669,40 +669,15 @@
             >
 
 			// On Ground - Airborne
-			
-            <[servolinear][GroundRollLeftWheelLoadMapping][]
-                <[string8][Input][LeftWheelHull.Load]>
-                <[float64][OutputSpeed][10]>
-                <[float64][Position][0]>
-                <[float64array][InputPosition][ 1 1.01 ]>
-                <[float64array][OutputPosition][ 0 1 ]>
+
+            <[ground_sensor][OnGroundSensor][]
+                <[string8][InputLeftLoad] [LeftWheelHull.Load]>
+                <[string8][InputRightLoad][RightWheelHull.Load]>
+                <[float64][Threshold][1000.0]>
             >
-            <[output_free][GroundRollLeftWheelLoadMappingOutput][]
-                <[string8][Input][GroundRollLeftWheelLoadMapping.Output]>
-            >
-            <[servolinear][GroundRollRightWheelLoadMapping][]
-                <[string8][Input][RightWheelHull.Load]>
-                <[float64][OutputSpeed][10]>
-                <[float64][Position][0]>
-                <[float64array][InputPosition][ 1 1.01 ]>
-                <[float64array][OutputPosition][ 0 1 ]>
-            >
-            <[output_free][GroundRollRightWheelLoadMappingOutput][]
-                <[string8][Input][GroundRollRightWheelLoadMapping.Output]>
-            >
-            <[product][OnGround][]
-                <[string8][Inputs][GroundRollLeftWheelLoadMapping.Output GroundRollRightWheelLoadMapping.Output]>
-            >
-            <[servolinear][Airborne][]
-                <[string8][Input][OnGround.Output]>
-                <[float64][OutputSpeed][2]>
-                <[float64][Position][0]>
-                <[float64array][InputPosition][ 0 1 ]>
-                <[float64array][OutputPosition][ 1 0 ]>
-            >
-            <[output_free][AirborneOutput][]
-                <[string8][Input][Airborne.Output]>
-            >
+            <[logic_invert][Airborne][]
+                <[float64][Input][OnGroundSensor.Output]>
+            >			
 			
 			// Stopped on ground  			
             <[servolinear][GroundRollLeftWheelSpeedMapping][]
@@ -712,9 +687,6 @@
                 <[float64array][InputPosition][ -0.3 -0.2 0.2 0.3 ]>
                 <[float64array][OutputPosition][0 1 1 0 ]>
             >
-            <[output_free][GroundRollLeftWheelSpeedMappingOutput][]
-                <[string8][Input][GroundRollLeftWheelSpeedMapping.Output]>
-            >
             <[servolinear][GroundRollRightWheelSpeedMapping][]
                 <[string8][Input][RightWheelHull.Speed]>
                 <[float64][OutputSpeed][10]>
@@ -722,14 +694,11 @@
                 <[float64array][InputPosition][ -0.3 -0.2 0.2 0.3 ]>
                 <[float64array][OutputPosition][0 1 1 0 ]>
             >
-            <[output_free][GroundRollRightWheelSpeedMappingOutput][]
-                <[string8][Input][GroundRollRightWheelSpeedMapping.Output]>
-            >
             <[product][GroundRollStopped][]
                 <[string8][Inputs][GroundRollLeftWheelSpeedMapping.Output GroundRollRightWheelSpeedMapping.Output]>
             >
             <[product][GroundStopped][]
-                <[string8][Inputs][OnGround.Output GroundRollStopped.Output]>
+                <[string8][Inputs][OnGroundSensor.Output GroundRollStopped.Output]>
             >
 			
 			// wing folding			
@@ -1158,18 +1127,38 @@
             <[output][SideSlip][]
                 <[string8][Input][PitotTube.SideSlip]>
             >
-            <[yawstring][YawString][]
+            <[indicator_string][IndicatorFlag][]
                 <[string8][Body][Fuselage]>
-                <[tmvector3d][R0][ 2.6950 0.0 -0.9845 ]>
-                <[tmvector3d][X0][ -1.0 0.0 0.0 ]>
-                <[tmvector3d][Y0][ 0.0 -1.0 0.0 ]>
-                <[tmvector3d][Z0][ 0.0  0.0 1.0 ]>
-                <[float64][Cdx][ 0.05 ]>
-                <[float64][Cdy][ 1.0 ]>
-                <[float64][Cdz][ 1.0 ]>
-                <[float64][Cly][ 1.5 ]>
-                <[float64][Clz][ 1.5 ]>
-            >						
+                <[tmvector3d][R0][2.6950 0.0 -0.9845]> 
+                <[tmvector3d][X0][ 0.0 0.0 1.0 ]>
+                <[tmvector3d][Direction][ -1.0 0.0 0.0 ]>
+                <[tmvector3d][Normal][ 0.0 0.0 1.0 ]>
+                <[float64][Length][0.18]>		
+            >
+            <[output_vec3][IndicatorFlag1][]
+                <[string8][Input][IndicatorFlag.Output1]>
+            >
+            <[output_vec3][IndicatorFlag2][]
+                <[string8][Input][IndicatorFlag.Output2]>
+            >
+            <[output_vec3][IndicatorFlag3][]
+                <[string8][Input][IndicatorFlag.Output3]>
+            >
+            <[output_vec3][IndicatorFlag4][]
+                <[string8][Input][IndicatorFlag.Output4]>
+            >
+            <[output_vec3][IndicatorFlag5][]
+                <[string8][Input][IndicatorFlag.Output5]>
+            >
+            <[output_vec3][IndicatorFlag6][]
+                <[string8][Input][IndicatorFlag.Output6]>
+            >
+            <[output_vec3][IndicatorFlag7][]
+                <[string8][Input][IndicatorFlag.Output7]>
+            >
+            <[output_vec3][IndicatorFlag8][]
+                <[string8][Input][IndicatorFlag.Output8]>
+            >				
     	>
         <[pointer_list_tmgraphics][GraphicObjects][]
 
@@ -1441,16 +1430,24 @@
                 <[string8][Graphics][Rudder]>
             >
 			//Flag
-            <[graphics_yawstring][Flag][]
+            <[graphics_string][YawString][]
                 <[string8][GeometryList][ fuzel_18006_8 ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[uint32][DirectionID][YawString.Direction]>
+                <[uint32][Position1ID][IndicatorFlag1.Output]>
+                <[uint32][Position2ID][IndicatorFlag2.Output]>
+                <[uint32][Position3ID][IndicatorFlag3.Output]>
+                <[uint32][Position4ID][IndicatorFlag4.Output]>
+                <[uint32][Position5ID][IndicatorFlag5.Output]>
+                <[uint32][Position6ID][IndicatorFlag6.Output]>
+                <[uint32][Position7ID][IndicatorFlag7.Output]>
+                <[uint32][Position8ID][IndicatorFlag8.Output]>			
                 <[tmvector3d][R0][ 2.6950 0.0 -0.9845 ]>
                 <[tmvector3d][X0][ -1.0 0.0 0.0 ]>
                 <[tmvector3d][Y0][ 0.0 -1.0 0.0 ]>
-                <[tmvector3d][Z0][ 0.0 0.0  1.0 ]>
-            >
+                <[tmvector3d][Z0][ 0.0 0.0  1.0 ]>				
+                <[float64][Length][0.18]>
+            >			
 
 		// gauges
 
@@ -2512,36 +2509,7 @@
                 <[string8][SoundFile][wind.wav]>
                 <[bool][External][false]>
             >
-
-            // slip and angle of attack
-            <[soundinput][SideSlip][]
-                <[uint32][InputID][SideSlip.Output]>
-            >
-            <[soundmapping][SideSlipIntensity][]
-                <[string8][Input][SideSlip.Output]>
-                <[tmvector2d][Map][ (0.0 0.0 ) (3.0 0.25) (10.0 1.0) ]>
-            >
-            <[soundmapping][AirspeedVolume][]
-                <[string8][Input][Airspeed.Output]>
-                <[tmvector2d][Map][ (5.0 0.0) (15.0 1.0) (30.0 1.5) (200.0 2.0) ]>
-            >
-            <[soundmultiply][SideSlipVolume][]
-                <[string8][Input0][SideSlipIntensity.Output]>
-                <[string8][Input1][AirspeedVolume.Output]>
-            >
-            <[soundmapping][SideSlipPitch][]
-                <[string8][Input][Airspeed.Output]>
-                <[tmvector2d][Map][ (0.0 0.6) ( 33.33 1.0 ) (200.0 2.0) ]>
-            >
-            <[soundloop][SideSlipLoop][]
-                <[string8][InputVolume][SideSlipVolume.Output]>
-                <[string8][InputPitch][SideSlipPitch.Output]>
-                <[uint32][PositionID][Fuselage.R]>
-                <[uint32][VelocityID][Fuselage.V]>
-                <[string8][SoundFile][sideslip.wav]>
-                <[bool][External][false]>
-            >
-
+			
             // prop wash rpm_prp 1020.0
             <[soundmapping][RPMPitchWind][]
                 <[string8][Input][RotationSpeed.Output]>
