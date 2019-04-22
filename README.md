@@ -9,3 +9,7 @@ Copyright (c) 2008-2009 Alexander Babichev
 
 This software distributed under terms of GPL 3.0 license.
 
+Tips:
+Wings filding - use tool in toolbox
+click on aispeed indicator to change Russian/English style gauges
+switch on panel - open GPS map
