@@ -1,7 +1,7 @@
 <[file][][]
 
 	//-------------------------------------
-	// Plane: Shavrov Sh-2  mass: 903.1 ( -0.552 0.000 -0.949 ) 906.1 ( -0.387 0.000 -0.764 )
+	// Plane: Shavrov Sh-2
 	// Compilation: Krzysztof Kaniewski
 	// 3D model: Denis 'ddenn' Krupin
 	// Date: Thu Dec 04 2014; Apr 2019
@@ -1197,6 +1197,9 @@
             <[output][SideSlip][]
                 <[string8][Input][PitotTube.SideSlip]>
             >
+            <[output][SideslipAngle][]
+                <[string8][Input][PitotTube.SideslipAngle]>
+            >			
             <[indicator_string][IndicatorFlag][]
                 <[string8][Body][Fuselage]>
                 <[tmvector3d][R0][2.6950 0.0 -0.9845]> 
@@ -1237,7 +1240,7 @@
                 <[uint][Positions][11]>
                 <[float64][Value][0.3]>
             >
-            <[output][RussianPanelLighting][]
+            <[output][PanelLighting][]
                 <[string8][Input][PanelLightingInput.Output]>
             >			
             <[event_sound][ButtonSound][]
@@ -1537,7 +1540,7 @@
 
 		// gauges
             <[graphics_input][PanelLightingInput][]
-                <[uint32][InputID][RussianPanelLighting.Output]>
+                <[uint32][InputID][PanelLighting.Output]>
                 <[float64][Scaling][2.0]>
             >
             <[graphics_color][RussianPanelLighting][]
@@ -1657,7 +1660,6 @@
 			// oil_pressure_psi
             <[graphics_input][GaugeInput_1][]
                 <[uint32][InputID][OilPressure.Output]> 
-        //        <[float64][Scaling][150]>
             >
             <[graphics_mapping][GaugeMapping_1112][]
                 <[string8][Input][GaugeInput_1.Output]>
@@ -1676,7 +1678,6 @@
 			
             <[graphics_input][Gauge_enInput_5][]
                 <[uint32][InputID][OilPressure.Output]> 
-        //        <[float64][Scaling][190]>
             >
             <[graphics_mapping][Gauge_enMapping_1280][]
                 <[string8][Input][Gauge_enInput_5.Output]>
@@ -1696,7 +1697,6 @@
 			// oil_temperature_deg_C	
             <[graphics_input][GaugeInput_2][]
                 <[uint32][InputID][OilTemperature.Output]> 
-        //        <[float64][Scaling][200]>
             >
             <[graphics_mapping][GaugeMapping_1122][]
                 <[string8][Input][GaugeInput_2.Output]>
@@ -1715,7 +1715,6 @@
 
             <[graphics_input][Gauge_enInput_6][]
                 <[uint32][InputID][OilTemperature.Output]> 
-        //        <[float64][Scaling][315]>
             >
             <[graphics_mapping][Gauge_enMapping_1290][]
                 <[string8][Input][Gauge_enInput_6.Output]>
@@ -1797,7 +1796,7 @@
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
     			<[uint32][AngleID][AltimeterNeedle.Output]>
-                <[float64][AngleMax][0.0020600]>
+                <[float64][AngleMax][0.0006279]>
                 <[tmvector3d][Axis][-1.0 0.0 0.0]>
                 <[tmvector3d][Pivot][-0.063476 0.057021 -0.974199]>
                 <[string8][InputIllumination0][RussianPanelLighting.Output]>
@@ -1808,7 +1807,7 @@
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
     			<[uint32][AngleID][AltimeterNeedle.Output]>
-                <[float64][AngleMax][0.020600]>
+                <[float64][AngleMax][0.0062792]>
                 <[tmvector3d][Axis][-1.0 0.0 0.0]>
                 <[tmvector3d][Pivot][0.075579 0.057021 -0.974199]>
                 <[string8][InputIllumination0][RussianPanelLighting.Output]>
@@ -1943,13 +1942,13 @@
                 <[string8][Graphics][EnglishGauges]>			
             >			
 
-			// slip_deg
+			// balance ball indicator
             <[graphics_input][GaugeInput_9][]
-                <[uint32][InputID][SideSlip.Output]>
+                <[uint32][InputID][SideslipAngle.Output]>
             >
             <[graphics_mapping][GaugeMapping_1192][]
                 <[string8][Input][GaugeInput_9.Output]>
-                <[tmvector2d][Map][(-175.0 0.139626) (-7.0 0.139626) (7.0 -0.139626) (175.0 -0.139626) ]>
+                <[tmvector2d][Map][(-0.177413 0.139626) (0.177413 -0.139626) ]>
             >
             <[hingedbodygraphics][Gauge_1800_10][]
                 <[string8][GeometryList][ gauges_1800_10 ]>
@@ -1960,13 +1959,7 @@
                 <[tmvector3d][Pivot][0.075579 0.242209 -0.892255]>
                 <[string8][InputIllumination0][RussianPanelLighting.Output]>
                 <[string8][Graphics][RussianGauges]>				
-            >
-            <[rigidbodygraphics][BalanceIndicatorBall][]
-        //        <[string8][GeometryList][ gauges_1800_10 ]>
-                <[uint32][PositionID][BalanceIndicatorBall.R]>
-                <[string8][InputIllumination0][RussianPanelLighting.Output]>
-                <[string8][InputTransform][RussianGaugesTransform.Output]>			
-            >			
+            >		
             <[hingedbodygraphics][Englishgauges_1800_10][]
                 <[string8][GeometryList][ gauges_en_2856_12 ]>
                 <[uint32][PositionID][Fuselage.R]>
@@ -1976,13 +1969,7 @@
                 <[tmvector3d][Pivot][0.075579 0.242209 -0.892255]>
                 <[string8][InputIllumination0][EnglishPanelLighting.Output]>
                 <[string8][Graphics][EnglishGauges]>			
-            >
-            <[rigidbodygraphics][EnglishBalanceIndicatorBall][]
-        //        <[string8][GeometryList][ gauges_en_2856_12 ]>
-                <[uint32][PositionID][BalanceIndicatorBall.R]>
-                <[string8][InputIllumination0][EnglishPanelLighting.Output]>
-                <[string8][InputTransform][EnglishGaugesTransform.Output]>					
-            >			
+            >		
 
 			// ENGN_mixt
             <[movinggraphics][ENGN_mixt][]
