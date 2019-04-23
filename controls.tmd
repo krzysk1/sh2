@@ -107,7 +107,7 @@
                 <[vector3_float64][R0][	-0.28 -0.33 -1.29]>
                 <[matrix3_float64][B0][ 1.0 0.0 0.0  0.0 1.0 0.0  0.0 0.0 1.0 ]>
                 <[vector3_float64][Direction][  0.994609 -0.103695 0.0  ]>
-                <[float64][StepDistance][0.006]>				
+                <[float64][StepDistance][0.0006]>				
                 <[string8][InputTransform][ToolboxTransform.Output]>				
                 <[control_message][OnStep][]
                     <[string8][Message][Controls.FoldWings]>
@@ -159,55 +159,55 @@
                 <[float64][Length][0.04]>
             >
 			
-			//Engine cowl lever
-            <[control_input][EngineLeverInput][]
-                <[uint32][InputID][ServoCheck.Output]>
+			// Cowl Flaps handle
+            <[control_input][CowlFlapsLeverInput][]
+                <[uint32][InputID][CowlFlapsLever.Output]>
                 <[float64][Scaling][0.523598]>
                 <[float64][Offset][-0.261799]>							
             >
-            <[control_rotation][EngineLeverTransform][]
-                <[string8][Input][EngineLeverInput.Output]>
+            <[control_rotation][CowlFlapsLeverTransform][]
+                <[string8][Input][CowlFlapsLeverInput.Output]>
                 <[tmvector3d][Axis][0.0 1.0 0.0]>
                 <[tmvector3d][Pivot][-0.070073 0.458695 -1.201290]>
             >			
-            <[control_cylinder][EngineLever][2]
+            <[control_cylinder][CowlFlapsLever][2]
                 <[string8][Type][lever]>
                 <[vector3_float64][R0][ -0.07242 0.4307 -1.088 ]>
                 <[matrix3_float64][B0][ 1.0 0.0 0.0  0.0 1.0 0.0  0.0 0.0 1.0 ]>
                 <[vector3_float64][Direction][ 1.0 0.0 0.0 ]>
                 <[float64][StepDistance][0.00054]>
-                <[string8][InputTransform][EngineLeverTransform.Output]>
+                <[string8][InputTransform][CowlFlapsLeverTransform.Output]>
                 <[control_message][OnStep][]
-                    <[string8][Message][Controls.EngineCowl]>
+                    <[string8][Message][Controls.CowlFlaps]>
                     <[string8][Qualifiers][step]>
-                    <[float64][Value][0.01]>
+                    <[float64][Value][0.1]>
                 >
                 <[float64][Radius][0.02]>
                 <[float64][Length][0.04]>
             >
 
-			//ENGN_heat
-            <[control_input][EngineHeatInput][]
-                <[uint32][InputID][ServoCheck.Output]>
+			// Carburettor Heat Lever 
+            <[control_input][CarburettorHeatLeverInput][]
+                <[uint32][InputID][CarburettorHeatLever.Output]>
                 <[float64][Scaling][0.523598]>
                 <[float64][Offset][-0.261799]>							
             >
-            <[control_rotation][EngineHeatTransform][]
-                <[string8][Input][EngineHeatInput.Output]>
-                <[tmvector3d][Axis][0.0 -1.0 0.0]>
+            <[control_rotation][CarburettorHeatLeverTransform][]
+                <[string8][Input][CarburettorHeatLeverInput.Output]>
+                <[tmvector3d][Axis][0.0 1.0 0.0]>
                 <[tmvector3d][Pivot][-0.070073 0.458695 -1.201290]>
             >			
-            <[control_cylinder][EngineHeatLever][2]
+            <[control_cylinder][CarburettorHeatLever][2]
                 <[string8][Type][lever]>
                 <[vector3_float64][R0][ -0.07242 0.4443 -1.312 ]>
                 <[matrix3_float64][B0][ 1.0 0.0 0.0  0.0 1.0 0.0  0.0 0.0 1.0 ]>
-                <[vector3_float64][Direction][ 1.0 0.0 0.0 ]>
+                <[vector3_float64][Direction][ -1.0 0.0 0.0 ]>
                 <[float64][StepDistance][0.00054]>
-                <[string8][InputTransform][EngineHeatTransform.Output]>
+                <[string8][InputTransform][CarburettorHeatLeverTransform.Output]>
                 <[control_message][OnStep][]
-                    <[string8][Message][Controls.EngineHeat]>
+                    <[string8][Message][AntiIce.CarburettorHeat]>
                     <[string8][Qualifiers][step]>
-                    <[float64][Value][0.01]>
+                    <[float64][Value][0.1]>
                 >
                 <[float64][Radius][0.02]>
                 <[float64][Length][0.04]>
@@ -242,7 +242,7 @@
 
 			// dummy switch
             <[control_input][DummySwitchInput][]
-                <[uint32][InputID][ServoCheck.Output]> 
+                <[uint32][InputID][DummySwitch.Output]> 
                 <[float64][Scaling][-1.570796]>
                 <[float64][Offset][0.785398]>							
             >
@@ -295,7 +295,7 @@
                 <[uint32][InputID][Magnetos.Output]>
             >
             <[control_product][MagnetosAngle][2]
-                <[uint32][Inputs][ MagnetosInput.Output 0.53 ]>
+                <[uint32][Inputs][ MagnetosInput.Output 1.0 ]>
             >
             <[control_rotation][MagnetosRotation][2]
                 <[string8][Input][MagnetosAngle.Output]>
@@ -312,7 +312,7 @@
                 <[control_message][OnRotate][]
                     <[string8][Message][Controls.Magnetos]>
                     <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
+                    <[float64][Value][0.5]>
                 >
                 <[vector3_float64][Dimensions][0.017 0.017 0.036]>
             >
