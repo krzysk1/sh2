@@ -3,7 +3,7 @@
         <[int][Version][210]>
         <[vec32array][ContactSpheres][ (0.140 -0.740 -1.844 0.326) (0.140 0.740 -1.844 0.326) (-5.013 0.0 -1.216 0.048) ]>
         <[string8][DisplayName][Shavrov Sh-2]>
-        <[string8][DescriptionTextEN][Shavrov Sh-2 was a 1930s amphibian design and the first Soviet mass-produced flying boat. The small, wooden aircraft was a further development of the Sh-1, with a more powerful engine and increased size.  
+        <[string8][DescriptionTextEN][Shavrov Sh-2 was a 1930s amphibian design and the first Soviet mass-produced flying boat. The small, wooden aircraft was a further development of the Sh-1, with a more powerful engine and increased size. The aircraft was in service until 1964 and set a number of records among flying boats and seaplanes. It was a light, simple and reliable design. 
 For Aerofly FS2 made by Krzysztof Kaniewski. Original 3D Design made by Denis "ddenn" Krupin.]>
 		<[float64][WingSpan][11.2]>
 		<[float64][Mass][885]>
@@ -23,7 +23,7 @@ For Aerofly FS2 made by Krzysztof Kaniewski. Original 3D Design made by Denis "d
         <[float64][QThrust][0.0]>
         <[float64][QRange][400000.0]>
         <[float64][QRatio][0.0]>
-        <[float64][QBuild][1300]>
+        <[float64][QBuild][700]>
         <[float64][QVirgin][1930]>
 		<[bool][Airplane][true]>
 		<[bool][Gear][true]>

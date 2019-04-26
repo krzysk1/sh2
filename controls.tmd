@@ -81,7 +81,7 @@
                 <[control_message][OnRotate][]
                     <[string8][Message][Controls.Roll.Input]>
                     <[string8][Qualifiers][step]>
-                    <[float64][Value][15.0]>
+                    <[float64][Value][7.0]>
                 >
                 <[control_message][OnStep][]
                     <[string8][Message][Controls.Pitch.Input]>
@@ -279,26 +279,26 @@
                 <[float64][Length][0.011]>
             >
 
-			// dummy switch
-            <[control_input][DummySwitchInput][]
-                <[uint32][InputID][DummySwitch.Output]> 
+			// Battery switch
+            <[control_input][BatterySwitchInput][]
+                <[uint32][InputID][SwitchMasterBattery.Output]> 
                 <[float64][Scaling][-1.570796]>
                 <[float64][Offset][0.785398]>							
             >
-            <[control_rotation][DummySwitchTransform][]
-                <[string8][Input][DummySwitchInput.Output]>
+            <[control_rotation][BatterySwitchTransform][]
+                <[string8][Input][BatterySwitchInput.Output]>
                 <[tmvector3d][Axis][0.0 0.999998 -0.002141]>
                 <[tmvector3d][Pivot][0.068870 -0.004954 -1.012999]>
             >			
-            <[control_cylinder][DummySwitch][22]
+            <[control_cylinder][BatterySwitch][22]
                 <[string8][Type][switch toggle]>
                 <[vector3_float64][R0][	0.0635 0.00676 -1.013]>
                 <[matrix3_float64][B0][ 1.0 0.0 0.0  0.0 1.0 0.0  0.0 0.0 1.0 ]>
                 <[vector3_float64][Direction][  -0.002141 0.0 0.999998 ]>
                 <[float64][StepDistance][0.005]>			
-                <[string8][InputTransform][DummySwitchTransform.Output]>				
+                <[string8][InputTransform][BatterySwitchTransform.Output]>				
                 <[control_message][OnStep][]
-                    <[string8][Message][Controls.Dummy]>
+                    <[string8][Message][Electrical.Battery]>
 					<[string8][Qualifiers][step]>
                     <[float64][Value][-1.0]>
                 >
