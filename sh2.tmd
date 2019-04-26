@@ -17,7 +17,7 @@
                 <[string8][Airspeed][AirspeedIndicator.IndicatedAirspeed]>
                 <[string8][BrakePosition][LeftBrakeInput.Output]>
                 <[string8][GearPosition][GearInput.Output]>
-                <[tmvector3d][LookAtPosition][ -0.1 0.0 -0.7 ]>
+                <[tmvector3d][LookAtPosition][ 0.0 0.0 -0.7 ]>
             >
             <[camera][CameraFollow][]
                 <[string8][Body][Fuselage]>
@@ -239,12 +239,12 @@
             <[wheel][RightWheelHull][]
                 <[float64][K][107600]>
                 <[float64][D][1807]>
-                <[float64][Radius][0.326136]>
-                <[float64][Width][0.1724]>
-                <[float64][RimRadius][0.2133]>
+                <[float64][Radius][0.32355]>
+                <[float64][Width][0.1862]>
+                <[float64][RimRadius][0.2055]>
                 <[float64][Inflation][344738.0]>
                 <[string8][Body][RightGear]>
-                <[tmvector3d][R0][0.140208 -0.740664 -1.844040]>
+                <[tmvector3d][R0][0.134033 -0.7416 -1.817984]>
                 <[tmvector3d][X0][ 1.0 0.0 0.0 ]>
                 <[string8][InputBrake][RightBrakeInput.Output]>
                 <[float64][BrakeStrength][0.15]>
@@ -252,12 +252,12 @@
             <[wheel][LeftWheelHull][]
                 <[float64][K][107600]>
                 <[float64][D][1807]>
-                <[float64][Radius][0.326136]>
-                <[float64][Width][0.1724]>
-                <[float64][RimRadius][0.2133]>
+                <[float64][Radius][0.32355]>
+                <[float64][Width][0.1862]>
+                <[float64][RimRadius][0.2055]>
                 <[float64][Inflation][344738.0]>
                 <[string8][Body][LeftGear]>
-                <[tmvector3d][R0][0.140208 0.740664 -1.844040]>
+                <[tmvector3d][R0][0.134033 0.7416 -1.817984]> 
                 <[tmvector3d][X0][ 1.0 0.0 0.0 ]>
                 <[string8][InputBrake][LeftBrakeInput.Output]>
                 <[float64][BrakeStrength][0.15]>
@@ -265,9 +265,9 @@
             <[wheelhull][TailSkidHull][]
                 <[float64][K][312000]>
                 <[float64][D][1234]>
-                <[float64][Radius][0.048288]>
+                <[float64][Radius][0.047]>
                 <[string8][Body][Fuselage]>
-                <[tmvector3d][R0][-5.013621 0.0 -1.216092]>
+                <[tmvector3d][R0][-5.013621 0.0 -1.2]>
                 <[tmvector3d][X0][ 1.0 0.0 0.0 ]>
             >
             <[output][GroundRollSpeedLeft][]
@@ -1416,8 +1416,6 @@
             <[output][PanelLighting][]
                 <[string8][Input][PanelLightingInput.Output]>
             >			
-            <[event_sound][ButtonSound][]
-            >
             <[event_sound][SwitchSound][]
             >
             <[event_sound][GearUpSound][]
@@ -2306,10 +2304,10 @@
                 <[uint32][AngleID][LeftWheelHull.RotationAngle]>
                 <[uint32][GroundID][LeftWheelHull.Ground]>
                 <[uint32][DeformationID][LeftWheelHull.Deformation]>
-                <[float64][Radius][0.326136]>
-                <[float64][RimRadius][0.2133]>
+                <[float64][Radius][0.32355]>
+                <[float64][RimRadius][0.2055]>
                 <[tmvector3d][Axis][0.0 1.0 0.0]>
-                <[tmvector3d][Pivot][0.134033 0.610747 -1.817984]>
+                <[tmvector3d][Pivot][0.134033 0.7416 -1.817984]>
             >
 			// Right Gear
             <[graphics_input][OtherInput_11][]
@@ -2339,10 +2337,10 @@
                 <[uint32][AngleID][RightWheelHull.RotationAngle]>
                 <[uint32][GroundID][RightWheelHull.Ground]>
                 <[uint32][DeformationID][RightWheelHull.Deformation]>
-                <[float64][Radius][0.326136]>
-                <[float64][RimRadius][0.2133]>
+                <[float64][Radius][0.32355]>
+                <[float64][RimRadius][0.2055]>
                 <[tmvector3d][Axis][0.0 1.0 0.0]>
-                <[tmvector3d][Pivot][0.134033 -0.644061 -1.817196]>
+                <[tmvector3d][Pivot][0.134033 -0.7416 -1.817196]>
             >
 
 			// Tail Misc
@@ -3128,19 +3126,7 @@
                 <[string8][SoundFile][gear.wav]>
                 <[bool][External][false]>
             >
-            // button and switches
-            <[soundinput][ButtonSound][]
-                <[uint32][InputID][ButtonSound.Output]>
-            >
-            <[sound_multi][SoundButton][]
-                <[uint32][PositionID][Fuselage.R]>
-                <[uint32][VelocityID][Fuselage.V]>
-                <[string8][InputTrigger][ButtonSound.Output]>
-                <[string8][InputVolume][0.6]>
-                <[string8][InputPitch][1.0]>
-                <[string8][SoundFile][avionics.wav]>
-                <[bool][External][false]>
-            >
+            // switches
             <[soundinput][SwitchSound][]
                 <[uint32][InputID][SwitchSound.Output]>
             >
