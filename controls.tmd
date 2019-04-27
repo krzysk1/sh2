@@ -105,7 +105,7 @@
             <[control_cylinder][Toolbox][22]
                 <[string8][Type][lever toggle]>
                 <[vector3_float64][R0][	-0.28 -0.33 -1.29]>
-                <[matrix3_float64][B0][ 1.0 0.0 0.0  0.0 1.0 0.0  0.0 0.0 1.0 ]>
+                <[matrix3_float64][B0][ 0.0 0.0 1.0  0.0 1.0 0.0  -1.0 0.0 0.0 ]>
                 <[vector3_float64][Direction][  0.994609 -0.103695 0.0  ]>
                 <[float64][StepDistance][0.0006]>				
                 <[string8][InputTransform][ToolboxTransform.Output]>				
@@ -182,12 +182,12 @@
                 <[tmvector3d][Axis][0.0 1.0 0.0]>
                 <[tmvector3d][Pivot][-0.070073 0.458695 -1.201430]>
             >			
-            <[control_cylinder][ThrottleLever][2]
+            <[control_sphere][ThrottleLever][2]
                 <[string8][Type][lever]>
                 <[vector3_float64][R0][ -0.07242 0.4602 -1.038 ]>
                 <[matrix3_float64][B0][ 1.0 0.0 0.0  0.0 1.0 0.0  0.0 0.0 1.0 ]>
                 <[vector3_float64][Direction][ 1.0 0.0 0.0 ]>
-                <[float64][StepDistance][0.00054]>
+                <[float64][StepDistance][0.001]>
                 <[string8][InputTransform][ThrottleLeverTransform.Output]>
                 <[control_message][OnStep][]
                     <[string8][Message][Controls.Throttle1]>
@@ -195,7 +195,6 @@
                     <[float64][Value][0.01]>
                 >
                 <[float64][Radius][0.02]>
-                <[float64][Length][0.04]>
             >
 			
 			// Cowl Flaps handle
@@ -209,7 +208,7 @@
                 <[tmvector3d][Axis][0.0 1.0 0.0]>
                 <[tmvector3d][Pivot][-0.070073 0.458695 -1.201290]>
             >			
-            <[control_cylinder][CowlFlapsLever][2]
+            <[control_sphere][CowlFlapsLever][2]
                 <[string8][Type][lever]>
                 <[vector3_float64][R0][ -0.07242 0.4307 -1.088 ]>
                 <[matrix3_float64][B0][ 1.0 0.0 0.0  0.0 1.0 0.0  0.0 0.0 1.0 ]>
@@ -222,7 +221,6 @@
                     <[float64][Value][0.1]>
                 >
                 <[float64][Radius][0.02]>
-                <[float64][Length][0.04]>
             >
 
 			// Carburettor Heat Lever 
@@ -236,7 +234,7 @@
                 <[tmvector3d][Axis][0.0 1.0 0.0]>
                 <[tmvector3d][Pivot][-0.070073 0.458695 -1.201290]>
             >			
-            <[control_cylinder][CarburettorHeatLever][2]
+            <[control_sphere][CarburettorHeatLever][2]
                 <[string8][Type][lever]>
                 <[vector3_float64][R0][ -0.07242 0.4443 -1.312 ]>
                 <[matrix3_float64][B0][ 1.0 0.0 0.0  0.0 1.0 0.0  0.0 0.0 1.0 ]>
@@ -249,7 +247,6 @@
                     <[float64][Value][0.1]>
                 >
                 <[float64][Radius][0.02]>
-                <[float64][Length][0.04]>
             >
 			
 			// map switch
