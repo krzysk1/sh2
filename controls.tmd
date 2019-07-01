@@ -16,8 +16,7 @@
                 >
                 <[float64][Radius][0.009]>
                 <[float64][Length][0.01]>
-            >
-			
+            >			
             // flight controls
             <[control_input][StickElevator][]
                 <[uint32][InputID][ServoElevator.Output]>
@@ -170,7 +169,6 @@
                 <[float64][Radius][0.02]>
                 <[float64][Length][0.04]>
             >			
-
 			//Throttle lever
             <[control_input][ThrottleLeverInput][]
                 <[uint32][InputID][ServoThrottle.Output]> 
@@ -195,8 +193,7 @@
                     <[float64][Value][0.01]>
                 >
                 <[float64][Radius][0.02]>
-            >
-			
+            >			
 			// Cowl Flaps handle
             <[control_input][CowlFlapsLeverInput][]
                 <[uint32][InputID][CowlFlapsLever.Output]>
@@ -222,7 +219,6 @@
                 >
                 <[float64][Radius][0.02]>
             >
-
 			// Carburettor Heat Lever 
             <[control_input][CarburettorHeatLeverInput][]
                 <[uint32][InputID][CarburettorHeatLever.Output]>
@@ -247,8 +243,7 @@
                     <[float64][Value][0.1]>
                 >
                 <[float64][Radius][0.02]>
-            >
-			
+            >			
 			// map switch
             <[control_input][MapSwitchInput][]
                 <[uint32][InputID][MapRetract.Output]> 
@@ -275,7 +270,39 @@
                 <[float64][Radius][0.002]>
                 <[float64][Length][0.011]>
             >
-
+			// map zoom
+			<[control_input][MapRotationInput][]
+                <[uint32][InputID][MapRetract.Output]> 
+                <[float64][Scaling][-1.134464]>
+                <[float64][Offset][0.959931]>				
+            >			
+            <[control_rotation][MapRotationTransform][]
+                <[string8][Input][MapRotationInput.Output]>
+                <[tmvector3d][Axis][0.0 -1.0 0.0]>
+                <[tmvector3d][Pivot][0.557672 0.137874 -1.158576]>
+            >	
+			<[control_input][MapRetractInput][]
+                <[uint32][InputID][MapRetract.Output]> 
+            >
+            <[control_translation][MapTranslation][2]
+                <[string8][Input][MapRetractInput.Output]>
+                <[tmvector3d][Axis][-0.472410 0.0 0.269216]>
+                <[string8][InputTransform][MapRotationTransform.Output]>				
+            >
+            <[control_box][MapZoomKnob][85]
+                <[string8][Type][knob]>
+                <[vector3_float64][R0][0.5356 0.1335 -1.086]>
+                <[matrix3_float64][B0][ 1.0 0.0 0.0  0.0 1.0 0.0  0.0 0.0 1.0 ]>
+                <[vector3_float64][Direction][ 1.0 0.0 0.0 ]>
+                <[float64][StepAngle][0.3]>
+	            <[string8][InputTransform][MapTranslation.Output]>				
+                <[control_message][OnRotate][]
+                    <[string8][Message][Map.Zoom]>
+                    <[string8][Qualifiers][step]>
+                    <[float64][Value][0.2]>
+                >
+                <[vector3_float64][Dimensions][0.01 0.19 0.15]>
+            >
 			// Battery switch
             <[control_input][BatterySwitchInput][]
                 <[uint32][InputID][SwitchMasterBattery.Output]> 
